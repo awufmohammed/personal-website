@@ -13,11 +13,16 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             background: linear-gradient(135deg, #eaf2ff, #f7f9fc);
             color: #333333;
+            line-height: 1.6;
         }
 
         /* HEADER */
@@ -26,34 +31,33 @@
             background: linear-gradient(135deg, #102a43, #1f5f99);
             color: white;
             text-align: center;
-            padding: 45px 20px;
+            padding: 40px 20px;
         }
 
-        /* LOGO */
+        /* JPG LOGO */
 
         .logo {
-            width: 110px;
-            height: 110px;
-            margin: auto;
-            background-color: white;
-            color: #17365d;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
             border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 40px;
-            font-weight: bold;
-            border: 5px solid #74b9ff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.08);
         }
 
         h1 {
             font-size: 38px;
-            margin-bottom: 10px;
+            margin: 15px 0 5px;
         }
 
         header p {
             font-size: 18px;
+            margin: 0;
         }
 
         /* NAVIGATION */
@@ -62,21 +66,24 @@
             background-color: #0b1f33;
             text-align: center;
             padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 18px;
+            margin: 0 15px;
             font-weight: bold;
-            transition: 0.3s;
+            transition: color 0.3s;
         }
 
         nav a:hover {
             color: #74b9ff;
         }
 
-        /* MAIN SECTIONS */
+        /* SECTIONS */
 
         section {
             width: 80%;
@@ -85,7 +92,7 @@
             margin: 30px auto;
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
         }
 
         h2 {
@@ -97,20 +104,20 @@
         .intro {
             font-size: 18px;
             font-style: italic;
-            line-height: 1.7;
+            color: #444444;
         }
 
         /* GRAPHIC */
 
         .computer-graphic {
             width: 280px;
-            margin: 25px auto;
+            margin: 30px auto;
             text-align: center;
             transition: transform 0.4s;
         }
 
         .computer-graphic:hover {
-            transform: scale(1.08);
+            transform: scale(1.07);
         }
 
         .monitor {
@@ -119,12 +126,12 @@
             background-color: #172b4d;
             border: 10px solid #333333;
             border-radius: 10px;
-            padding: 20px;
+            padding: 25px 15px;
             color: #74b9ff;
-            font-family: monospace;
-            font-size: 18px;
-            text-align: left;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+            font-family: "Courier New", monospace;
+            font-size: 17px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
         }
 
         .stand {
@@ -147,7 +154,9 @@
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 20px;
         }
 
         .skill {
@@ -155,13 +164,13 @@
             color: white;
             padding: 10px 18px;
             border-radius: 20px;
-            transition: 0.3s;
+            transition: all 0.3s;
         }
 
         .skill:hover {
             background-color: #74b9ff;
             color: #102a43;
-            transform: translateY(-3px);
+            transform: translateY(-4px);
         }
 
         /* FOOTER */
@@ -191,7 +200,7 @@
         .custom-cursor {
             width: 22px;
             height: 22px;
-            border: 2px solid #74b9ff;
+            border: 2px solid #1687ff;
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
@@ -199,164 +208,213 @@
             z-index: 9999;
         }
 
-    </style>
+        /* PHONE/TABLET */
 
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 28px;
+            }
+
+            section {
+                width: 92%;
+                padding: 20px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            .logo {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
 
-<header>
+    <!-- HEADER -->
 
-    <!-- LOGO -->
-    <div class="logo">MA</div>
+    <header id="home">
 
-    <h1>Mohammed Awuf</h1>
+        <img src="logo.jpg"
+             alt="Mohammed Awuf Logo"
+             class="logo">
 
-    <p>Computer Information Systems Student</p>
+        <h1>Mohammed Awuf</h1>
 
-</header>
+        <p>Computer Information Systems Student</p>
 
-
-<nav>
-
-    <a href="#home">Home</a>
-
-    <a href="#about">About Me</a>
-
-    <a href="#skills">Skills</a>
-
-    <a href="#goals">Goals</a>
-
-</nav>
+    </header>
 
 
-<section id="home">
+    <!-- NAVIGATION -->
 
-    <h2>Welcome</h2>
+    <nav>
 
-    <p class="intro">
-        Welcome to my personal website. This website introduces
-        who I am, my interests, my computer skills, and my future
-        goals in information technology.
-    </p>
-
-</section>
-
-
-<section id="about">
-
-    <h2>About Me</h2>
-
-    <!-- COMPUTER GRAPHIC -->
-
-    <div class="computer-graphic">
-
-        <div class="monitor">
-            &lt;Hello World!&gt;
-            <br><br>
-            Mohammed Awuf
-            <br>
-            CIS Student
-        </div>
-
-        <div class="stand"></div>
-
-        <div class="base"></div>
-
-    </div>
-
-    <p>
-        My name is Mohammed Awuf. I am a Computer Information
-        Systems student. I am interested in computers,
-        programming, web development, and information technology.
-        I enjoy learning new computer skills and understanding
-        how technology can be used to solve problems.
-    </p>
-
-</section>
-
-
-<section id="skills">
-
-    <h2>My Skills</h2>
-
-    <p>
-        I am continuing to develop my computer and technology
-        skills. Some of the areas I have experience with include:
-    </p>
-
-    <div class="skills">
-
-        <div class="skill">HTML</div>
-
-        <div class="skill">CSS</div>
-
-        <div class="skill">JavaScript</div>
-
-        <div class="skill">Python</div>
-
-        <div class="skill">Linux</div>
-
-        <div class="skill">Computer Systems</div>
-
-    </div>
-
-</section>
-
-
-<section id="goals">
-
-    <h2>My Goals</h2>
-
-    <p>
-        My goal is to continue improving my computer and
-        programming skills. I want to learn more about web
-        development, computer systems, programming, and
-        information technology. I hope to use these skills
-        to build a successful career in the technology field.
-    </p>
-
-</section>
-
-
-<footer>
-
-    <p>
         <a href="#home">Home</a>
 
-        <a href="#about">About</a>
+        <a href="#about">About Me</a>
 
         <a href="#skills">Skills</a>
 
         <a href="#goals">Goals</a>
-    </p>
 
-    <p>
-        &copy; All Rights Reserved 2012
-    </p>
-
-</footer>
+    </nav>
 
 
-<!-- CUSTOM CURSOR -->
+    <!-- INTRODUCTION -->
 
-<div class="custom-cursor"></div>
+    <section>
+
+        <h2>Welcome</h2>
+
+        <p class="intro">
+            Welcome to my personal website. This website introduces
+            who I am, my interests, my computer skills, and my future
+            goals in information technology.
+        </p>
+
+    </section>
 
 
-<script>
+    <!-- SHORT BIO -->
 
-    const cursor = document.querySelector(".custom-cursor");
+    <section id="about">
 
-    document.addEventListener("mousemove", function(event) {
+        <h2>About Me</h2>
 
-        cursor.style.left = event.clientX + "px";
 
-        cursor.style.top = event.clientY + "px";
+        <!-- GRAPHIC -->
 
-    });
+        <div class="computer-graphic">
 
-</script>
+            <div class="monitor">
+
+                &lt;Hello World!&gt;
+
+                <br><br>
+
+                Mohammed Awuf
+
+                <br>
+
+                CIS Student
+
+            </div>
+
+            <div class="stand"></div>
+
+            <div class="base"></div>
+
+        </div>
+
+
+        <p>
+            My name is Mohammed Awuf. I am a Computer Information
+            Systems student. I am interested in computers,
+            programming, web development, and information technology.
+            I enjoy learning new computer skills and understanding
+            how technology can be used to solve problems.
+        </p>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <h2>My Skills</h2>
+
+        <p>
+            I am continuing to develop my computer and technology
+            skills. Some areas I have experience with include:
+        </p>
+
+        <div class="skills">
+
+            <div class="skill">HTML</div>
+
+            <div class="skill">CSS</div>
+
+            <div class="skill">JavaScript</div>
+
+            <div class="skill">Python</div>
+
+            <div class="skill">Linux</div>
+
+            <div class="skill">Computer Systems</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GOALS -->
+
+    <section id="goals">
+
+        <h2>My Goals</h2>
+
+        <p>
+            My goal is to continue improving my computer and
+            programming skills. I want to learn more about web
+            development, computer systems, programming, and
+            information technology. I hope to use these skills
+            to build a successful career in the technology field.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#skills">Skills</a>
+
+            <a href="#goals">Goals</a>
+
+        </p>
+
+        <p>
+            &copy; All Rights Reserved 2012
+        </p>
+
+    </footer>
+
+
+    <!-- CUSTOM CURSOR -->
+
+    <div class="custom-cursor"></div>
+
+
+    <script>
+
+        const cursor = document.querySelector(".custom-cursor");
+
+        document.addEventListener("mousemove", function(event) {
+
+            cursor.style.left = event.clientX + "px";
+
+            cursor.style.top = event.clientY + "px";
+
+        });
+
+    </script>
 
 
 </body>
